@@ -1,26 +1,41 @@
+@import "tailwindcss";
+
+/* Ajustes de listas de tareas */
 .task-list-item::before {
-    @apply hidden;
+  display: none;
 }
 
 .task-list-item {
-    @apply list-none;
+  list-style-type: none;
 }
 
+/* Pie de página / Footnotes */
 .footnotes {
-    @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+  margin-top: 3rem; /* Equivalente a mt-12 */
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--color-gray-200);
+  padding-top: 2rem; /* Equivalente a pt-8 */
+}
+
+/* Modo oscuro para footnotes utilizando la sintaxis de tema de Tailwind v4 */
+@variant dark {
+  .footnotes {
+    border-top-color: var(--color-gray-700);
+  }
 }
 
 .data-footnote-backref {
-    @apply no-underline;
+  text-decoration-line: none;
 }
 
 .csl-entry {
-    @apply my-5;
+  margin-top: 1.25rem; /* Equivalente a my-5 */
+  margin-bottom: 1.25rem;
 }
 
-/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+/* Transición para autofill en navegadores WebKit */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s,
-    color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
 }
